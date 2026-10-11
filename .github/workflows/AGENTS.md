@@ -1,0 +1,12 @@
+# ASDL website editing rules
+- Never publish, push, or deploy without explicit user approval. Keep deployment manual-only unless authorized.
+- Use Astro static generation, TypeScript, and repository-base-aware URLs via src/lib/site.ts.
+- Keep English and Korean equivalent. Add both language values when editing content.
+- Edit publications, members, and news in their separate JSON files under src/data; do not hard-code those records into pages.
+- Never invent people, publications, awards, equipment inventories, or contact details. Keep sample entries visibly marked with placeholder: true until replaced with verified information.
+- Publications: id, placeholder, bilingual title, authors array, journal, numeric year, volume, pages, nullable DOI, bilingual status. DOI is an identifier, not a URL. Render newest year first.
+- Members: id, placeholder, local photo path, bilingual name/role/researchTopic, nullable email, boolean alumni. Obtain consent for photos and emails.
+- News: id, placeholder, ISO publishDate, bilingual title/content/category/imageAlt, local image path. Render newest date first. Content is plain text.
+- Keep images in public/images. Paths in JSON omit leading slash and repository base. Provide meaningful localized alt text.
+- Run build and verify after substantive edits. Check mobile layout, keyboard navigation, languages, and non-root base paths.
+- Keep sample labels while sample content remains. Confirm university-approved Korean terminology and laboratory name before launch.
